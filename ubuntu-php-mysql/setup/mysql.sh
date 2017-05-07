@@ -16,11 +16,10 @@ sudo apt-get install -y language-pack-en
 # sudo apt-get update
 # sudo apt-get install -y mysql-server
 
-# sudo service mysql restart
+# Next do with root user -- sudo su
+# mysql -e "CREATE USER $APP_DB_USER IDENTIFIED BY '$APP_DB_PASS'" -p
 
-# mysql -e "CREATE USER $APP_DB_USER IDENTIFIED BY '$APP_DB_PASS'"
-
-# mysql -e "CREATE DATABASE `$APP_DB_NAME` CHARACTER SET utf8 COLLATE utf8_general_ci"
-# mysql -e "GRANT ALL PRIVILEGES ON $APP_DB_NAME.* to $APP_DB_USER"
+# mysql -e "CREATE DATABASE $APP_DB_NAME CHARACTER SET utf8 COLLATE utf8_general_ci" -p
+# mysql -e "GRANT ALL PRIVILEGES ON $APP_DB_NAME.* to $APP_DB_USER" -p
 
 # echo "Successfully installed MySQL"
